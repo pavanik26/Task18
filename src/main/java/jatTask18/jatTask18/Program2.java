@@ -18,7 +18,7 @@ public class Program2 {
 		WebDriverManager.chromedriver().setup();
 		
 	       
-	       // Initialize FirefoxDriver with options
+	       // Initialize ChromeDriver
 	       WebDriver driver = new ChromeDriver();
 	      
 	       try
@@ -45,7 +45,7 @@ public class Program2 {
           String rgbaActualColor = driver.findElement(By.xpath("//div[@id='droppable']"))
                                          .getCssValue("background-color");
           
-                  
+          // to check if background color and text changes and matches with expected        
           if (rgbaActualColor.contains(expectedColor) && (driver.findElements(By.xpath("//p[contains(text(),'Dropped!')]")).size()>0))
           {
         	  System.out.println("background color of target element changed and text of target element changed to Dropped!");

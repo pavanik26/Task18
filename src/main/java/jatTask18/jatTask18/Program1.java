@@ -19,7 +19,7 @@ public class Program1 {
 		WebDriverManager.chromedriver().setup();
 		
 	       
-	       // Initialize FirefoxDriver with options
+	       // Initialize ChromeDriver with options
 	       WebDriver driver = new ChromeDriver();
 	       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
            driver.get("https://www.facebook.com");
@@ -29,6 +29,8 @@ public class Program1 {
            
            waitForElement(4000);
            
+           
+           // to check if user is redirected to Facebook login page
            if(driver.findElements(By.xpath("//img[@alt='Facebook']")).size()>0)
            {
            System.out.println("landed on correct page");
